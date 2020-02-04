@@ -1,0 +1,36 @@
+{
+  "author": "imath",
+  "bugs": {
+    "url": "https://github.com/imath/required-block-attributes/issues"
+  },
+  "description": "WordPress plugin to check required block attributes are set when a post is published.",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.12.0"
+  },
+  "scripts": {
+    "start": "parcel watch src/*",
+    "build": "parcel build src/*",
+    "wpcs": "./vendor/bin/phpcs class-required-block-attributes.php inc/*.php --standard=WordPress"
+  },
+  "keywords": [
+    "wordpress",
+    "required",
+    "block",
+    "attributes"
+  ],
+  "homepage": "https://github.com/imath/required-block-attributes",
+  "license": "GPL-2.0+",
+  "name": "required-block-attributes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imath/required-block-attributes.git"
+  },
+  "version": "1.0.0",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@wordpress/babel-plugin-makepot": "^3.2.1",
+    "@wordpress/babel-preset-default": "^4.6.2",
+    "parcel-bundler": "^1.12.4"
+  }
+}
