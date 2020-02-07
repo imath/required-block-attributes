@@ -9,8 +9,8 @@
     "npm": "6.12.0"
   },
   "scripts": {
-    "start": "parcel watch src/*",
-    "build": "parcel build src/*",
+    "start": "parcel watch src/*/index.js",
+    "build": "parcel build src/*/index.js --no-source-maps",
     "wpcs": "./vendor/bin/phpcs class-required-block-attributes.php inc/*.php --standard=WordPress"
   },
   "keywords": [

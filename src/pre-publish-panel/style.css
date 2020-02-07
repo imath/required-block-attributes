@@ -1,0 +1,12 @@
+.required-block-attributes-container {
+	display: flex;
+	align-items: center;
+}
+
+.required-block-attributes-block-type {
+	width: 20%;
+}
+
+.required-block-attributes-fields {
+	width: 80%;
+}

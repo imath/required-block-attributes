@@ -28,6 +28,12 @@ registerBlockType( 'required-block-attributes/example', {
 		},
 	},
 
+	// This property is used by The Required Block Attributes Pre Publish panel.
+	requiredAttributes: [
+		{ name: 'attributeOne', label: __( 'Test Attribute One', 'required-block-attributes' ) },
+		{ name: 'attributeTwo', label: __( 'Test Attribute Two', 'required-block-attributes' ) },
+	],
+
 	edit: function( { attributes, setAttributes } ) {
 		const selected = attributes.attributeTwo ? attributes.attributeTwo : '';
 		const options = [

@@ -75,9 +75,14 @@ final class Main {
 
 		require $inc_path . 'globals.php';
 		require $inc_path . 'functions.php';
+		require $inc_path . 'registers.php';
+
+		if ( is_admin() ) {
+			require $inc_path . 'admin.php';
+		}
 
 		if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
-			require $inc_path . 'registers.php';
+			require $inc_path . 'example.php';
 		}
 	}
 }
