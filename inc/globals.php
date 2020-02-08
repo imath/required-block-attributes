@@ -5,6 +5,7 @@
  * @package required-block-attributes
  * @subpackage \inc\globals
  */
+
 namespace Required_Block_Attributes;
 
 // Exit if accessed directly.

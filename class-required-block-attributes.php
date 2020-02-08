@@ -1,4 +1,4 @@
-<?php
+<?php // phpcs:ignore WordPress.Files.FileName.
 /**
  * WordPress plugin to check required block attributes are set when a post is published.
  *
@@ -19,6 +19,7 @@
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Domain Path:       /languages/
  */
+
 namespace Required_Block_Attributes;
 
 // Exit if accessed directly.

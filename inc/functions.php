@@ -5,6 +5,7 @@
  * @package required-block-attributes
  * @subpackage \inc\functions
  */
+
 namespace Required_Block_Attributes;
 
 // Exit if accessed directly.
@@ -17,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 1.0.0
  *
- * @param stdClass        $prepared_post An object representing a single post prepared
+ * @param stdClass         $prepared_post An object representing a single post prepared
  *                                       for inserting or updating the database.
- * @param WP_REST_Request $request       Request object.
+ * @param \WP_REST_Request $request       Request object.
  */
 function validate_block_attributes( $prepared_post, \WP_REST_Request $request ) {
 	if ( ! isset( $prepared_post->post_status ) ) {
@@ -61,6 +62,7 @@ function validate_block_attributes( $prepared_post, \WP_REST_Request $request ) 
 		return new \WP_Error(
 			'required_block_attributes_missing_required_value',
 			sprintf(
+				/* Translators: %s is a comma separated list of the fields with no values. */
 				_n( 'a required field is not set, please make sure to fill in the field : %s.', 'Some required fields are not set, please make sure to fill in the following fields : %s.', count( $missing_values ), 'required-block-attributes' ),
 				implode( ', ', array_map( 'esc_html', $missing_values ) )
 			),
