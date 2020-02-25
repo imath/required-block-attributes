@@ -18,7 +18,7 @@ const { memoize, filter, each, find } = lodash;
  */
 import './style.css';
 
-const RequiredBlockAttributesPrePublishPanel = ( { blockTypes, postBlocks, onSelectBlock, openDocumentSettings } ) => {
+const RequiredBlockAttributesPrePublishPanel = ( { blockTypes, postBlocks, onSelectBlock, disableSaveButton, enableSaveButton } ) => {
 	let requiredAttributes = [];
 
 	// Pick the Block Types containing required attributes.
@@ -68,8 +68,11 @@ const RequiredBlockAttributesPrePublishPanel = ( { blockTypes, postBlocks, onSel
 	}
 
 	if ( ! requiredAttributes || 0 === requiredAttributes.length ) {
+		enableSaveButton();
 		return null;
 	}
+
+	disableSaveButton();
 
     return (
 		<PluginPrePublishPanel
@@ -97,16 +100,18 @@ const RequiredBlockAttributesPrePublishPanelInfo = compose( [
 
 		return {
 			blockTypes: select( 'core/blocks' ).getBlockTypes(),
-			postBlocks: select( 'core/block-editor' ).getBlocks(),
+			postBlocks: postBlocks(),
 		};
 	} ),
 	withDispatch( ( dispatch ) => ( {
 		onSelectBlock( clientId ) {
 			dispatch( 'core/block-editor' ).selectBlock( clientId );
 		},
-		openDocumentSettings() {
-			dispatch( 'core/edit-post' ).openGeneralSidebar( 'edit-post/document' );
-			dispatch( 'core/edit-post' ).closePublishSidebar();
+		disableSaveButton() {
+			dispatch( 'core/editor' ).lockPostSaving( 'required-block-attributes' );
+		},
+		enableSaveButton() {
+			dispatch( 'core/editor' ).unlockPostSaving( 'required-block-attributes' );
 		},
 	} ) ),
 ] )( RequiredBlockAttributesPrePublishPanel );
