@@ -34,11 +34,19 @@ function register_block_type() {
 		true
 	);
 
+	\wp_register_style(
+		'required-block-attributes-example-block',
+		$rba->dist_url . 'block/index.css',
+		array(),
+		$rba->version
+	);
+
 	// Register the Entity block.
 	\register_block_type(
 		'required-block-attributes/example',
 		array(
 			'editor_script'       => 'required-block-attributes-example-block',
+			'editor_style'        => 'required-block-attributes-example-block',
 			'required_attributes' => array( // This parameter makes sure required attributes are checked on the server side.
 				array(
 					'name'  => 'attributeOne',

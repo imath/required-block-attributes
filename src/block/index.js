@@ -1,7 +1,15 @@
+/**
+ * WordPress dependencies.
+ */
 const { createElement } = wp.element;
-const { TextControl, SelectControl } = wp.components;
+const { TextControl, SelectControl, TextareaControl } = wp.components;
 const { registerBlockType } = wp.blocks;
 const { __ } = wp.i18n;
+
+/**
+ * Internal dependencies.
+ */
+import './style.css';
 
 registerBlockType( 'required-block-attributes/example', {
 	title: __( 'Required Block Attributes', 'required-block-attributes' ),
@@ -24,6 +32,9 @@ registerBlockType( 'required-block-attributes/example', {
 			type: 'string',
 		},
 		attributeTwo: {
+			type: 'string',
+		},
+		attributeThree: {
 			type: 'string',
 		},
 	},
@@ -61,6 +72,13 @@ registerBlockType( 'required-block-attributes/example', {
 						setAttributes( { attributeTwo: option } );
 					} }
 				/>
+				<TextareaControl
+					label={ __( 'Test Attribute Three (optional)', 'required-block-attributes' ) }
+					value={ attributes.attributeThree }
+					onChange={ ( text ) => {
+						setAttributes( { attributeThree: text } );
+					} }
+				/>
 			</div>
 		);
 	},
@@ -69,18 +87,26 @@ registerBlockType( 'required-block-attributes/example', {
 		return (
 			<div>
 				<h2>{ __( 'Tested Form', 'required-block-attributes') }</h2>
+
 				<div className="label">
 					<span>{ __( 'Tested Attribute One', 'required-block-attributes' ) }</span>
 				</div>
 				<div className="value">
 					<span>{ attributes.attributeOne }</span>
 				</div>
+
 				<div className="label">
 					<span>{ __( 'Tested Attribute Two', 'required-block-attributes' ) }</span>
 				</div>
 				<div className="value">
 					<span>{ attributes.attributeTwo }</span>
 				</div>
+
+				{ ( '' !== attributes.attributeThree ) &&
+					<div className="value">
+						<p>{ attributes.attributeThree }</p>
+					</div>
+				}
 			</div>
 		);
 	},
