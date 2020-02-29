@@ -6,12 +6,14 @@
   "description": "WordPress plugin to check required block attributes are set when a post is published.",
   "engines": {
     "node": "10.13.0",
-    "npm": "6.12.0"
+    "npm": "6.13.7"
   },
   "scripts": {
     "start": "parcel watch src/*/index.js",
     "build": "parcel build src/*/index.js --no-source-maps",
-    "wpcs": "./vendor/bin/phpcs class-required-block-attributes.php inc/*.php --standard=WordPress"
+    "wpcs": "./vendor/bin/phpcs class-required-block-attributes.php inc/*.php --standard=WordPress",
+    "pot": "wp i18n make-pot . languages/required-block-attributes.pot --exclude=\".git,src,node_modules,languages,vendor,.cache\"",
+    "po2json": "wp i18n make-json languages"
   },
   "keywords": [
     "wordpress",

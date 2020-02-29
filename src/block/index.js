@@ -48,9 +48,9 @@ registerBlockType( 'required-block-attributes/example', {
 	edit: function( { attributes, setAttributes } ) {
 		const selected = attributes.attributeTwo ? attributes.attributeTwo : '';
 		const options = [
-			{ label: __( 'Select a value', 'risk-ops' ), value: '' },
-			{ label: __( 'Value One', 'risk-ops' ), value: 'valueone' },
-			{ label: __( 'Value Two', 'risk-ops' ), value: 'valuetwo' },
+			{ label: __( 'Select a value', 'required-block-attributes' ), value: '' },
+			{ label: __( 'Value One', 'required-block-attributes' ), value: 'valueone' },
+			{ label: __( 'Value Two', 'required-block-attributes' ), value: 'valuetwo' },
 		];
 
 		return (

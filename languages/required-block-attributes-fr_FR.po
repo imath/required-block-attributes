@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Required Block Attributes 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/required-block-attributes\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-02-29T01:33:20+00:00\n"
+"PO-Revision-Date: 2020-02-29 02:35+0100\n"
+"Language: fr\n"
+"X-Generator: Poedit 1.7.4\n"
+"X-Domain: required-block-attributes\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. Plugin URI of the plugin
+msgid "https://github.com/imath/required-block-attributes"
+msgstr "https://github.com/imath/required-block-attributes"
+
+#. Description of the plugin
+msgid "WordPress plugin to check required block attributes are set when a post is published."
+msgstr "Extension de l‘éditeur de blocs de WordPress pour intégrer une fonctionnalité de validation des attributs requis avant d’autoriser la publication ou la mise à jour d’une publication."
+
+#. Author of the plugin
+msgid "imath"
+msgstr "imath"
+
+#. Author URI of the plugin
+msgid "https://imathi.eu"
+msgstr "https://imathi.eu"
+
+#: inc/example.php:53
+msgid "Attribute One"
+msgstr "Premier Attribut"
+
+#: inc/example.php:57
+msgid "Attribute Two"
+msgstr "Deuxième Attribut"
+
+#. Translators: %s is a comma separated list of the fields with no values.
+#: inc/functions.php:66
+msgid "a required field is not set, please make sure to fill in the field : %s."
+msgid_plural "Some required fields are not set, please make sure to fill in the following fields : %s."
+msgstr[0] "Un champ requis n’est pas rempli, merci de vous assurer de renseigner le champ : %s."
+msgstr[1] "Des champs requis ne sont pas remplis, merci de vous assurer de renseigner les champs : %s."

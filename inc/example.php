@@ -61,3 +61,17 @@ function register_block_type() {
 	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_type' );
+
+/**
+ * Load JavaScript translations for the example block.
+ *
+ * @since  1.0.0
+ */
+function set_block_translations() {
+	\wp_set_script_translations(
+		'required-block-attributes-example-block',
+		'required-block-attributes',
+		rba()->lang_path
+	);
+}
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\set_block_translations' );
