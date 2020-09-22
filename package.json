@@ -34,5 +34,8 @@
     "@wordpress/babel-plugin-makepot": "^3.2.1",
     "@wordpress/babel-preset-default": "^4.6.2",
     "parcel-bundler": "^1.12.4"
+  },
+  "dependencies": {
+    "node-forge": ">=0.10.0"
   }
 }
