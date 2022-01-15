@@ -36,6 +36,6 @@
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "node-forge": ">=0.10.0"
+    "node-forge": ">=1.0.0"
   }
 }
