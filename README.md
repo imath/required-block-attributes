@@ -1,5 +1,7 @@
 # Required Block Attributes
 
+**This WP Plugin is no more maintained and is now archived**
+
 WordPress plugin to check required block attributes are set before a post is published or updated.
 
 This plugin includes an example of block using the "required attribute" feature. To play with it, simply define the `WP_DEBUG` constnat of your wp-config.php file to `true`.
